@@ -87,7 +87,7 @@ public class Project1 {
         Login.setRegisteredUserDetails(username, password, firstNameInput, lastNameInput);
         JOptionPane.showMessageDialog(null, "Registration successful!");
 
-        // --- Login Section ---
+        // Login Section 
         JOptionPane.showMessageDialog(null, "Now, please log in with your new credentials.");
         String loginUsername = null;
         String loginPassword = null;
@@ -113,7 +113,7 @@ public class Project1 {
             }
         }
 
-        // --- Application Menu Section (QuickChat) ---
+        //  Application Menu Section (QuickChat)
         {
             JOptionPane.showMessageDialog(null, "Welcome to QuickChat.");
 
@@ -137,7 +137,7 @@ public class Project1 {
 
                 switch (option) {
                     case 1:
-                        // 🟢 FIX: Reintroduce prompt for number of messages
+                        //  Reintroduce prompt for number of messages
                         String numMessagesStr = JOptionPane.showInputDialog(null, "How many messages do you wish to enter?");
                         int numMessages = 0;
                         if (numMessagesStr != null) {
@@ -148,7 +148,7 @@ public class Project1 {
                                 continue;
                             }
                         }
-                        // 🟢 FIX: Pass the count to processMessages
+                        // Pass the count to processMessages
                         processMessages(numMessages, messageApp);
                         // Execution returns here, so the main menu is shown next.
                         break;
@@ -165,7 +165,7 @@ public class Project1 {
         }
     }
 
-    // 🟢 FIX: Reverted method signature to accept the `count` parameter
+    //  Reverted method signature to accept the `count` parameter
     private static void processMessages(int count, Message messageApp) {
 
         if (count <= 0) {
@@ -173,11 +173,11 @@ public class Project1 {
             return;
         }
 
-        // 🟢 FIX: Use a for loop to process exactly 'count' number of messages
+        //  Use a for loop to process exactly 'count' number of messages
         for (int i = 0; i < count; i++) {
             JOptionPane.showMessageDialog(null, "Processing Message " + (i + 1) + " of " + count);
 
-            // --- 1. Get and Validate Recipient (Loops) ---
+            //  1. Get and Validate Recipient (Loops) 
             String recipient = null;
             while (true) {
                 recipient = JOptionPane.showInputDialog(null, "Enter recipient's cell number for Message " + (i + 1) + ":\n(Format: +27711869300)");
@@ -191,7 +191,7 @@ public class Project1 {
             }
             if (recipient == null) continue; // Skip to next message if canceled on recipient
 
-            // --- 2. Get and Validate Message Content (Loops) ---
+            // 2. Get and Validate Message Content (Loops) 
             String content = null;
             while (true) {
                 content = JOptionPane.showInputDialog(null, "Enter message content (max 250 characters):");
@@ -205,11 +205,11 @@ public class Project1 {
             }
             if (content == null) continue; // Skip to next message if canceled on content
             
-            // --- 3. Generate Auto-Generated Data ---
+            //  3. Generate Auto-Generated Data 
             String messageID = messageApp.createMessageID();
             String messageHash = messageApp.createMessageHash();
 
-            // --- 4. Send Message Options ---
+            //  4. Send Message Options 
             String sendOption = JOptionPane.showInputDialog(null, "Message ID: " + messageID + "\nMessage Hash: " + messageHash + "\n\nSelect an option for Message " + (i + 1) + ":\n"
                     + "1) Send Message\n"
                     + "2) Disregard Message\n"

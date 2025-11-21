@@ -43,17 +43,17 @@ public class Project1NGTest {
         message.setRecipient(TEST_RECIPIENT_1);
         message.setMessageContent("Where are you? You are late! I have asked you to be on time.");
         // Note: The Message class internally creates MessageObject to hold the content and metadata.
-        message.send("1", "8776543210", "87:WHERETIME"); // Sent
+        message.send("1", "8776543210", "87;1 WHERETIME"); // Sent
         
-        // Message 2 (Stored, short: 26 characters) -> Hash: 99:YOHOOOGATE
+        // Message 2 (Stored, short: 26 characters) -> Hash: 99:1 YOHOOOGATE
         message.setRecipient(TEST_RECIPIENT_2);
         message.setMessageContent("Yohooo, I am at your gate.");
-        message.send("3", "9911223344", "99:YOHOOOGATE"); // Stored
+        message.send("3", "9911223344", "99;2 YOHOOOGATE"); // Stored
         
         // Message 3 (Sent, medium: 29 characters) -> Hash: 12:OKYOU
         message.setRecipient(TEST_RECIPIENT_1);
         message.setMessageContent("Ok, I am leaving without you.");
-        message.send("1", "1299887766", "12:OKYOU"); // Sent
+        message.send("1", "1299887766", "123 OKYOU"); // Sent
         // Total Sent Messages should be 2 after this setup.
     }
 

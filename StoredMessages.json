@@ -648,5 +648,325 @@
     "recipient": "+27723831162",
     "message": "Good Moring",
     "flag": "Sent"
+  },
+  {
+    "recipient": "+27723831161",
+    "message": "hello world",
+    "flag": "Stored"
+  },
+  {
+    "recipient": "+27723831161",
+    "message": "hey",
+    "flag": "Sent"
+  },
+  {
+    "recipient": "+27723831161",
+    "message": "bye bye",
+    "flag": "Sent"
+  },
+  {
+    "recipient": "+27711234567",
+    "message": "Where are you? You are late! I have asked you to be on time.",
+    "flag": "Sent"
+  },
+  {
+    "recipient": "+27829876543",
+    "message": "Yohooo, I am at your gate.",
+    "flag": "Stored"
+  },
+  {
+    "recipient": "+27711234567",
+    "message": "Ok, I am leaving without you.",
+    "flag": "Sent"
+  },
+  {
+    "recipient": "+27711234567",
+    "message": "Where are you? You are late! I have asked you to be on time.",
+    "flag": "Sent"
+  },
+  {
+    "recipient": "+27829876543",
+    "message": "Yohooo, I am at your gate.",
+    "flag": "Stored"
+  },
+  {
+    "recipient": "+27711234567",
+    "message": "Ok, I am leaving without you.",
+    "flag": "Sent"
+  },
+  {
+    "recipient": "+27711234567",
+    "message": "Where are you? You are late! I have asked you to be on time.",
+    "flag": "Sent"
+  },
+  {
+    "recipient": "+27829876543",
+    "message": "Yohooo, I am at your gate.",
+    "flag": "Stored"
+  },
+  {
+    "recipient": "+27711234567",
+    "message": "Ok, I am leaving without you.",
+    "flag": "Sent"
+  },
+  {
+    "recipient": "+27711234567",
+    "message": "Where are you? You are late! I have asked you to be on time.",
+    "flag": "Sent"
+  },
+  {
+    "recipient": "+27829876543",
+    "message": "Yohooo, I am at your gate.",
+    "flag": "Stored"
+  },
+  {
+    "recipient": "+27711234567",
+    "message": "Ok, I am leaving without you.",
+    "flag": "Sent"
+  },
+  {
+    "recipient": "+27711234567",
+    "message": "Where are you? You are late! I have asked you to be on time.",
+    "flag": "Sent"
+  },
+  {
+    "recipient": "+27829876543",
+    "message": "Yohooo, I am at your gate.",
+    "flag": "Stored"
+  },
+  {
+    "recipient": "+27711234567",
+    "message": "Ok, I am leaving without you.",
+    "flag": "Sent"
+  },
+  {
+    "recipient": "+27711234567",
+    "message": "Where are you? You are late! I have asked you to be on time.",
+    "flag": "Sent"
+  },
+  {
+    "recipient": "+27829876543",
+    "message": "Yohooo, I am at your gate.",
+    "flag": "Stored"
+  },
+  {
+    "recipient": "+27711234567",
+    "message": "Ok, I am leaving without you.",
+    "flag": "Sent"
+  },
+  {
+    "recipient": "+27711234567",
+    "message": "Where are you? You are late! I have asked you to be on time.",
+    "flag": "Sent"
+  },
+  {
+    "recipient": "+27829876543",
+    "message": "Yohooo, I am at your gate.",
+    "flag": "Stored"
+  },
+  {
+    "recipient": "+27711234567",
+    "message": "Ok, I am leaving without you.",
+    "flag": "Sent"
+  },
+  {
+    "recipient": "+27711234567",
+    "message": "Where are you? You are late! I have asked you to be on time.",
+    "flag": "Sent"
+  },
+  {
+    "recipient": "+27829876543",
+    "message": "Yohooo, I am at your gate.",
+    "flag": "Stored"
+  },
+  {
+    "recipient": "+27711234567",
+    "message": "Ok, I am leaving without you.",
+    "flag": "Sent"
+  },
+  {
+    "recipient": "+27711234567",
+    "message": "Where are you? You are late! I have asked you to be on time.",
+    "flag": "Sent"
+  },
+  {
+    "recipient": "+27829876543",
+    "message": "Yohooo, I am at your gate.",
+    "flag": "Stored"
+  },
+  {
+    "recipient": "+27711234567",
+    "message": "Ok, I am leaving without you.",
+    "flag": "Sent"
+  },
+  {
+    "recipient": "+27711869300",
+    "message": "Test send message.",
+    "flag": "Sent"
+  },
+  {
+    "recipient": "+27711234567",
+    "message": "Where are you? You are late! I have asked you to be on time.",
+    "flag": "Sent"
+  },
+  {
+    "recipient": "+27829876543",
+    "message": "Yohooo, I am at your gate.",
+    "flag": "Stored"
+  },
+  {
+    "recipient": "+27711234567",
+    "message": "Ok, I am leaving without you.",
+    "flag": "Sent"
+  },
+  {
+    "recipient": "+27711234567",
+    "message": "Where are you? You are late! I have asked you to be on time.",
+    "flag": "Sent"
+  },
+  {
+    "recipient": "+27829876543",
+    "message": "Yohooo, I am at your gate.",
+    "flag": "Stored"
+  },
+  {
+    "recipient": "+27711234567",
+    "message": "Ok, I am leaving without you.",
+    "flag": "Sent"
+  },
+  {
+    "recipient": "+27711234567",
+    "message": "Where are you? You are late! I have asked you to be on time.",
+    "flag": "Sent"
+  },
+  {
+    "recipient": "+27829876543",
+    "message": "Yohooo, I am at your gate.",
+    "flag": "Stored"
+  },
+  {
+    "recipient": "+27711234567",
+    "message": "Ok, I am leaving without you.",
+    "flag": "Sent"
+  },
+  {
+    "recipient": "+27711234567",
+    "message": "Where are you? You are late! I have asked you to be on time.",
+    "flag": "Sent"
+  },
+  {
+    "recipient": "+27711234567",
+    "message": "Ok, I am leaving without you.",
+    "flag": "Sent"
+  },
+  {
+    "recipient": "+27711234567",
+    "message": "Where are you? You are late! I have asked you to be on time.",
+    "flag": "Sent"
+  },
+  {
+    "recipient": "+27829876543",
+    "message": "Yohooo, I am at your gate.",
+    "flag": "Stored"
+  },
+  {
+    "recipient": "+27711234567",
+    "message": "Ok, I am leaving without you.",
+    "flag": "Sent"
+  },
+  {
+    "recipient": "+27711234567",
+    "message": "Where are you? You are late! I have asked you to be on time.",
+    "flag": "Sent"
+  },
+  {
+    "recipient": "+27829876543",
+    "message": "Yohooo, I am at your gate.",
+    "flag": "Stored"
+  },
+  {
+    "recipient": "+27711234567",
+    "message": "Ok, I am leaving without you.",
+    "flag": "Sent"
+  },
+  {
+    "recipient": "+27711234567",
+    "message": "Where are you? You are late! I have asked you to be on time.",
+    "flag": "Sent"
+  },
+  {
+    "recipient": "+27829876543",
+    "message": "Yohooo, I am at your gate.",
+    "flag": "Stored"
+  },
+  {
+    "recipient": "+27711234567",
+    "message": "Ok, I am leaving without you.",
+    "flag": "Sent"
+  },
+  {
+    "recipient": "+27711234567",
+    "message": "Where are you? You are late! I have asked you to be on time.",
+    "flag": "Sent"
+  },
+  {
+    "recipient": "+27829876543",
+    "message": "Yohooo, I am at your gate.",
+    "flag": "Stored"
+  },
+  {
+    "recipient": "+27711234567",
+    "message": "Ok, I am leaving without you.",
+    "flag": "Sent"
+  },
+  {
+    "recipient": "+27711234567",
+    "message": "Where are you? You are late! I have asked you to be on time.",
+    "flag": "Sent"
+  },
+  {
+    "recipient": "+27829876543",
+    "message": "Yohooo, I am at your gate.",
+    "flag": "Stored"
+  },
+  {
+    "recipient": "+27711234567",
+    "message": "Ok, I am leaving without you.",
+    "flag": "Sent"
+  },
+  {
+    "recipient": "+27711234567",
+    "message": "Where are you? You are late! I have asked you to be on time.",
+    "flag": "Sent"
+  },
+  {
+    "recipient": "+27829876543",
+    "message": "Yohooo, I am at your gate.",
+    "flag": "Stored"
+  },
+  {
+    "recipient": "+27711234567",
+    "message": "Ok, I am leaving without you.",
+    "flag": "Sent"
+  },
+  {
+    "recipient": "+27711869300",
+    "message": "Test send message.",
+    "flag": "Sent"
+  },
+  {
+    "recipient": "+27711234567",
+    "message": "Where are you? You are late! I have asked you to be on time.",
+    "flag": "Sent"
+  },
+  {
+    "recipient": "+27829876543",
+    "message": "Yohooo, I am at your gate.",
+    "flag": "Stored"
+  },
+  {
+    "recipient": "+27711234567",
+    "message": "Ok, I am leaving without you.",
+    "flag": "Sent"
   }
 ]

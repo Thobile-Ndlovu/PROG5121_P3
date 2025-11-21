@@ -39,10 +39,7 @@ public class Message {
         }
     }
 
-    /**
-     * 🔑 CRITICAL FIX: The helper class used by GSON must be 'static' 
-     * and its fields must be 'public' for reliable serialization.
-     */
+
     private static class MessageData {
         public String recipient;
         public String message;
@@ -71,7 +68,7 @@ public class Message {
         this.currentMessageContent = messageContent;
     }
 
-    // --- Message Validation Methods (Omitted for brevity, assumed correct) ---
+    //  Message Validation Methods 
     public boolean checkRecipientCall(String callNumber) {
         if (callNumber == null || callNumber.trim().isEmpty()) {
             return false;
@@ -86,7 +83,7 @@ public class Message {
         return message.length() <= 250;
     }
 
-    // --- Message ID and Hash Generation (Omitted for brevity, assumed correct) ---
+    //  Message ID and Hash Generation 
     public String createMessageID() {
         Random rand = new Random();
         long tenDigitId = (long) (rand.nextDouble() * 9000000000L) + 1000000000L;
@@ -109,7 +106,7 @@ public class Message {
         return messageIDPrefix + ":" + firstWord + lastWord;
     }
 
-    // --- Core Message Processing ---
+    // Core Message Processing 
     public String send(String option, String messageID, String messageHash) {
         switch (option) {
             case "1": // Sent Message
@@ -139,7 +136,7 @@ public class Message {
         return totalMessagesSent;
     }
     
-    // --- Utility Features (Omitted for brevity, assumed correct) ---
+    //  Utility Features 
 
     public String displayLongestMessage() {
         List<String> sentContents = allMessages.stream()
@@ -226,7 +223,7 @@ public class Message {
             }
         }
 
-        sb.append("\n--- Disregarded Message Content ---\n");
+        sb.append("-\n Disregarded Message Content -\n");
         if (disregardedMessages.isEmpty()) {
             sb.append("No messages were disregarded.\n");
         } else {
@@ -238,7 +235,7 @@ public class Message {
         return sb.toString();
     }
 
-    // --- JSON Load ---
+    //  JSON Load 
     public void readJsonIntoArray() {
         String jsonFilePath = "StoredMessages.json";
         File jsonFile = new File(jsonFilePath);
@@ -292,7 +289,7 @@ public class Message {
         }
     }
 
-    // --- JSON Save ---
+    // JSON Save 
     public void saveMessagesToJson() {
         String jsonFilePath = "StoredMessages.json";
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
