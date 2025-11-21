@@ -1,6 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
 package com.mycompany.project1;
 
 import javax.swing.JOptionPane;
@@ -25,8 +22,8 @@ public class Project1 {
                 JOptionPane.showMessageDialog(null, "Registration cancelled. Exiting.", "Exit", JOptionPane.INFORMATION_MESSAGE);
                 return;
             }
-            
-            if (Login.checkUsername(username)) { 
+
+            if (Login.checkUsername(username)) {
                 break; // Exit loop if valid
             }
             JOptionPane.showMessageDialog(null, "Invalid username format. Please try again.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -39,8 +36,8 @@ public class Project1 {
                 JOptionPane.showMessageDialog(null, "Registration cancelled. Exiting.", "Exit", JOptionPane.INFORMATION_MESSAGE);
                 return;
             }
-            
-            if (Login.checkPasswordComplexity(password)) { 
+
+            if (Login.checkPasswordComplexity(password)) {
                 break; // Exit loop if valid
             }
             JOptionPane.showMessageDialog(null, "Invalid password format. Please try again.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -53,7 +50,7 @@ public class Project1 {
                 JOptionPane.showMessageDialog(null, "Registration cancelled. Exiting.", "Exit", JOptionPane.INFORMATION_MESSAGE);
                 return;
             }
-           
+
             if (Login.validateCellphoneNumber(cellphoneNumber)) {
                 break; // Exit loop if valid
             }
@@ -100,7 +97,7 @@ public class Project1 {
         while (!isLoginSuccessful) {
             loginUsername = JOptionPane.showInputDialog(null, "Enter your username to login:");
             if (loginUsername == null) return;
-            
+
             loginPassword = JOptionPane.showInputDialog(null, "Enter your password to login:");
             if (loginPassword == null) return;
 
@@ -115,33 +112,19 @@ public class Project1 {
                 }
             }
         }
-        
+
         // --- Application Menu Section (QuickChat) ---
         {
             JOptionPane.showMessageDialog(null, "Welcome to QuickChat.");
-            
-            // NOTE: Initial messages are set to 5 to populate the arrays for testing purposes.
-            String numMessagesStr = JOptionPane.showInputDialog(null, "How many messages do you wish to enter?");
-            int numMessages = 0;
-            if (numMessagesStr != null) {
-                try {
-                    numMessages = Integer.parseInt(numMessagesStr);
-                } catch (NumberFormatException e) {
-                    JOptionPane.showMessageDialog(null, "Invalid input. Assuming 0 messages.", "Error", JOptionPane.ERROR_MESSAGE);
-                }
-            }
 
             int option = 0;
-            Message messageApp = new Message();
-            
-            // Load stored messages from JSON at startup
-            messageApp.readJsonIntoArray();
+            Message messageApp = new Message(); // JSON messages loaded here in constructor
 
             do {
                 String menuOptions = "Select an option:\n"
-                                     + "1) Send New Messages\n"
-                                     + "2) Array Operations (Search/Display/Delete)\n"
-                                     + "3) Quit";
+                        + "1) Send New Messages\n"
+                        + "2) Array Operations (Search/Display/Delete)\n"
+                        + "3) Quit";
                 String optionStr = JOptionPane.showInputDialog(null, menuOptions);
                 if (optionStr == null) break;
 
@@ -154,7 +137,20 @@ public class Project1 {
 
                 switch (option) {
                     case 1:
+                        // 🟢 FIX: Reintroduce prompt for number of messages
+                        String numMessagesStr = JOptionPane.showInputDialog(null, "How many messages do you wish to enter?");
+                        int numMessages = 0;
+                        if (numMessagesStr != null) {
+                            try {
+                                numMessages = Integer.parseInt(numMessagesStr);
+                            } catch (NumberFormatException e) {
+                                JOptionPane.showMessageDialog(null, "Invalid input. Returning to main menu.", "Error", JOptionPane.ERROR_MESSAGE);
+                                continue;
+                            }
+                        }
+                        // 🟢 FIX: Pass the count to processMessages
                         processMessages(numMessages, messageApp);
+                        // Execution returns here, so the main menu is shown next.
                         break;
                     case 2:
                         showArrayOperationsMenu(messageApp);
@@ -169,16 +165,23 @@ public class Project1 {
         }
     }
 
+    // 🟢 FIX: Reverted method signature to accept the `count` parameter
     private static void processMessages(int count, Message messageApp) {
 
+        if (count <= 0) {
+            JOptionPane.showMessageDialog(null, "No messages to process. Returning to main menu.");
+            return;
+        }
+
+        // 🟢 FIX: Use a for loop to process exactly 'count' number of messages
         for (int i = 0; i < count; i++) {
             JOptionPane.showMessageDialog(null, "Processing Message " + (i + 1) + " of " + count);
 
             // --- 1. Get and Validate Recipient (Loops) ---
             String recipient = null;
             while (true) {
-                recipient = JOptionPane.showInputDialog(null, "Enter recipient's cell number:\n(Format: +277118693002)");
-                if (recipient == null) break;
+                recipient = JOptionPane.showInputDialog(null, "Enter recipient's cell number for Message " + (i + 1) + ":\n(Format: +27711869300)");
+                if (recipient == null) break; // Inner loop break
                 
                 if (messageApp.checkRecipientCall(recipient)) {
                     messageApp.setRecipient(recipient);
@@ -186,13 +189,13 @@ public class Project1 {
                 }
                 JOptionPane.showMessageDialog(null, "Cell phone number is incorrectly formatted. Please try again.", "Validation Error", JOptionPane.ERROR_MESSAGE);
             }
-            if (recipient == null) continue; // Skip to next message if canceled
+            if (recipient == null) continue; // Skip to next message if canceled on recipient
 
             // --- 2. Get and Validate Message Content (Loops) ---
             String content = null;
             while (true) {
                 content = JOptionPane.showInputDialog(null, "Enter message content (max 250 characters):");
-                if (content == null) break;
+                if (content == null) break; // Inner loop break
                 
                 if (messageApp.checkMessageLength(content)) {
                     messageApp.setMessageContent(content);
@@ -200,7 +203,7 @@ public class Project1 {
                 }
                 JOptionPane.showMessageDialog(null, "Message is too long or empty. Max 250 characters. Please try again.", "Validation Error", JOptionPane.ERROR_MESSAGE);
             }
-            if (content == null) continue; // Skip to next message if canceled
+            if (content == null) continue; // Skip to next message if canceled on content
             
             // --- 3. Generate Auto-Generated Data ---
             String messageID = messageApp.createMessageID();
@@ -208,10 +211,10 @@ public class Project1 {
 
             // --- 4. Send Message Options ---
             String sendOption = JOptionPane.showInputDialog(null, "Message ID: " + messageID + "\nMessage Hash: " + messageHash + "\n\nSelect an option for Message " + (i + 1) + ":\n"
-                                                             + "1) Send Message\n"
-                                                             + "2) Disregard Message\n"
-                                                             + "3) Store Message to send later\n"
-                                                             + "4) ChatGPT (Placeholder)");
+                    + "1) Send Message\n"
+                    + "2) Disregard Message\n"
+                    + "3) Store Message to send later\n"
+                    + "4) ChatGPT (Placeholder)");
 
             if (sendOption == null) sendOption = "2";
 
@@ -223,28 +226,29 @@ public class Project1 {
             // Display the full details if sent or stored
             if (result.startsWith("Message successfully sent.") || result.contains("stored")) {
                 String displayDetails = "--- Message " + (i + 1) + " Details ---\n"
-                                         + "MessageID: " + messageID + "\n"
-                                         + "Message Hash: " + messageHash + "\n"
-                                         + "Recipient: " + recipient + "\n"
-                                         + "Message: " + content;
+                        + "MessageID: " + messageID + "\n"
+                        + "Message Hash: " + messageHash + "\n"
+                        + "Recipient: " + recipient + "\n"
+                        + "Message: " + content;
                 JOptionPane.showMessageDialog(null, displayDetails);
             }
         }
+        // The loop finishes after 'count' messages, and the method returns to the main menu.
     }
-    
+
     private static void showArrayOperationsMenu(Message messageApp) {
         String menu = "Array Operations:\n"
-                    + "a) Display longest Sent Message\n"
-                    + "b) Search for Message ID\n"
-                    + "c) Search all messages sent to a Recipient\n"
-                    + "d) Delete a message using its Hash\n"
-                    + "e) Display Report (All Sent/Stored/Disregarded Messages)\n"
-                    + "f) Back to Main Menu";
-        
-        String choice = JOptionPane.showInputDialog(null, menu).toLowerCase();
-        
+                + "a) Display longest Sent Message\n"
+                + "b) Search for Message ID\n"
+                + "c) Search all messages sent to a Recipient\n"
+                + "d) Delete a message using its Hash\n"
+                + "e) Display Report (All Sent/Stored/Disregarded Messages)\n"
+                + "f) Back to Main Menu";
+
+        String choice = JOptionPane.showInputDialog(null, menu);
         if (choice == null) return;
-        
+        choice = choice.toLowerCase();
+
         switch (choice) {
             case "a":
                 JOptionPane.showMessageDialog(null, messageApp.displayLongestMessage());
